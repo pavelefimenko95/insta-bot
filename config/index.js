@@ -42,31 +42,31 @@ module.exports = {
             234372052, //ужгород
         ],
         hashtags: [
-            'kiev',
-            'kharkiv',
-            'kharkov',
-            'odessa',
-            'dnepr',
-            'zaporozhye',
-            'lviv',
-            'krivoyrog',
-            'mariupol',
-            'vinnitsa',
-            'chernigov',
-            'poltava',
-            'zhytomyr',
-            'sumy',
-            'khmelnitsky',
-            'chernovtsy',
-            'rovno',
+            // 'ambassador',
+            // 'sponsor',
+            // 'tech',
+            // 'zara',
+            // 'ROMWE',
+            // 'monteza',
+            // 'lviv',
+            // 'krivoyrog',
+            // 'mariupol',
+            // 'vinnitsa',
+            // 'chernigov',
+            // 'poltava',
+            // 'zhytomyr',
+            // 'sumy',
+            // 'khmelnitsky',
+            // 'chernovtsy',
+            // 'rovno',
             'dnepropetrovsk',
-            'kremenchug',
-            'ivanofrankivsk',
-            'ternopil',
-            'lutsk',
-            'bilatserkva',
-            'kramatorsk',
-            'uzhgorod'
+            // 'kremenchug',
+            // 'ivanofrankivsk',
+            // 'ternopil',
+            // 'lutsk',
+            // 'bilatserkva',
+            // 'kramatorsk',
+            // 'uzhgorod'
         ],
         RANDOM_REQUESTS_DELAY_RANGE: 4000,
         CONCURRENCY: 1,
@@ -76,55 +76,31 @@ module.exports = {
     accounts: {
         RANDOM_LOGIN_DELAY_RANGE: 4000,
         common: {
-            password: 'd41d8cd98',
+            password: 'a7172225',
             name: 'technospot',
             lastname: 'store' // кроме 1го в яндекс
         },
         mediaGainer: {
-            username: 'insta.media.gainer',
-            mail: 'insta.media.gainer@yandex.ru'
+            username: 'sliminia.albina',
+            mail: 'semki950@gmail.com'
         },
         users: [
             {
-                username: 'technospot.com.ua', //prev technospot.com.ua.9hedxp38562
-                address: 'technospot.com.ua.9heDXp385622@yandex.ua'
+                username: 'sliminia.albina',
+                address: 'semki950@gmail.com'
             },
-            {
-                username: 'technospot.com.ua2',
-                address: 'q865552@nwytg.net'
-            },
-            {
-                username: 'technospot.com.ua4',
-                address: 'q1315882@nwytg.net'
-            },
-            {
-                username: 'technospot.com.ua5',
-                address: 'q1646947@nwytg.net'
-            },
-            {
-                username: 'technospot.com.ua10',
-                address: 'technospot.com.ua10@yandex.ru'
-            },
-            {
-                username: 'technospot.com.ua11',
-                address: 't42208@nwytg.net'
-            },
-            {
-                username: 'technospot.com.ua16',
-                address: 'technospot.com.ua14@yandex.ru'
-            },
-            {
-                username: 'technospot.com.ua17',
-                address: 't288225@nwytg.net'
-            },
-            {
-                username: 'technospot.com.ua18',
-                address: 't288984@nwytg.net'
-            },
-            {
-                username: 'technospot.com.ua20',
-                address: 'technospot.com.ua20@yandex.ru'
-            }
+          // {
+          //   username: 'sliminia.wendy',
+          //   address: 'semki950@gmail.com'
+          // },
+          // {
+          //   username: 'sliminia.genry',
+          //   address: 'semki950@gmail.com'
+          // },
+          // {
+          //   username: 'sliminia.vanessa',
+          //   address: 'semki950@gmail.com'
+          // },
         ]
     },
     RANDOM_LIKES_DELAY_RANGE: 2000

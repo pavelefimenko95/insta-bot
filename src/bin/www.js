@@ -8,10 +8,10 @@ let models = require('../models');
 let defaultService = require('../services/defaultService');
 let loginAccounts = require('../services/schedule/processMedia').loginAccounts;
 
-models.sequelize.sync().then(() => {
+models.sequelize.sync({force: true}).then(() => {
     console.log('sequelize initialized');
     defaultService();
-    loginAccounts();
+    // loginAccounts();
 });
 
 require('../services/schedule');
