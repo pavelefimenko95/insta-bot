@@ -8,6 +8,7 @@ const Op = Sequelize.Op;
 const cookieStore = new FileCookieStore('./src/cookies/admin-account-cookies/cookies.json');
 
 let isProcessing = false;
+let isLogin = false;
 
 let requestsTimeout = () => +(Math.random() * mediaConfig.RANDOM_REQUESTS_DELAY_RANGE).toFixed(0) + 1000;
 let cronTimeout = () => +(Math.random() * mediaConfig.RANDOM_CRON_DELAY_RANGE).toFixed(0);
@@ -22,10 +23,11 @@ export default () => {
         isProcessing = true;
 
         setTimeout(async () => {
-          await client.login();
-          console.log('logged in');
+            !isLogin && await client.login();
+			isLogin = true;
+            console.log('client login');
             try {
-                let locationResponses = (await Promise.map([], locationId => new Promise(async resolve => {
+                let locationResponses = (await Promise.map(locations, locationId => new Promise(async resolve => {
                     try {
                         let responses = await client.getMediaFeedByLocation({ locationId });
                         setTimeout(() => resolve(responses), requestsTimeout());
@@ -54,15 +56,11 @@ export default () => {
 
                 let createdMediaCount = 0;
                 await Promise.map(edges, edge => new Promise(async resolve => {
-                    console.log({edge});
-                    let { id, shortcode, owner: {id: ownerId} } = edge.node;
+                    let { id, shortcode, owner: { id: ownerId } } = edge.node;
 
-                    const duplicatedPerson = !!await Person.findOne({
-                      userId: ownerId,
-                    });
-                    !duplicatedPerson && await Person.create({
-                      userId: ownerId,
-                    });
+                    const duplicatedPerson = await Person.findOne({ where: { userId: ownerId } });
+
+                    !duplicatedPerson && await Person.create({ userId: ownerId });
 
                     let duplicatedMedia = await Media.findOne({
                         where: {
@@ -89,6 +87,6 @@ export default () => {
                 isProcessing = false;
                 console.log(e);
             }
-        }, 0);
+        }, cronTimeout());
     }
 };

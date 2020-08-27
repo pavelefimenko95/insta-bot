@@ -7,11 +7,13 @@ require('babel-polyfill');
 let models = require('../models');
 let defaultService = require('../services/defaultService');
 let loginAccounts = require('../services/schedule/processMedia').loginAccounts;
+let loginAccountsForSendingMessage = require('../services/schedule/sendDIrectMessage').loginAccountsForSendingMessage;
 
-models.sequelize.sync({force: true}).then(() => {
+models.sequelize.sync({}).then(() => {
     console.log('sequelize initialized');
     defaultService();
-    // loginAccounts();
+    loginAccounts();
+    loginAccountsForSendingMessage();
 });
 
 require('../services/schedule');

@@ -9,5 +9,9 @@ module.exports = (sequelize, Sequelize) =>
         processedMediaCount: {
             type: Sequelize.INTEGER,
             defaultValue: 0
+        },
+        processedSendMessageCount: {
+            type: Sequelize.INTEGER,
+            defaultValue: 0
         }
     });
